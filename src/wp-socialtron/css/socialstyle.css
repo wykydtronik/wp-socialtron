@@ -1,0 +1,56 @@
+section.socialShare {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1999999999;
+}
+
+section.socialShare > a {
+  display: inline-block;
+  width: 20%;
+  height: 45px;
+  background: #333;
+  text-align: center;
+  line-height: 45px;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section.socialShare a.facebook {
+  background: #4a67b7;
+}
+
+section.socialShare a.twitter {
+  background: #22b0f2;
+}
+
+section.socialShare a.linkedin {
+  background: #007bb5;
+}
+
+section.socialShare a.whatsapp {
+  background: #2ab200;
+}
+
+section.socialShare a.email {
+  background: #bc1515;
+}
+
+section.socialShare > a,
+section.socialShare > a:hover,
+section.socialShare > a:visited,
+section.socialShare > a:active {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+section.socialShare {
+
+}
