@@ -1,6 +1,6 @@
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
-  var twitterUser = '@placeholder';
+  var twitterUser = '@eddihughes';
 
   // No need to change anything else :)
 
