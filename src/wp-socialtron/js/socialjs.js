@@ -8,13 +8,6 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
   var shareTitle = document.getElementsByTagName("title")[0].innerHTML;
   var shareTweetdata = shareTitle + ' via ' + twitterUser + ' ';
 
-  // If Font Awesome not included to project, we create related link tag inside of <head></head> elements.
-  document.fonts.ready.then(function() {
-    if (document.fonts.check('1em "FontAwesome"') != true) {
-      jQuery('head').append('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">');
-    }
-  });
-
   var dataList = '<section class="socialShare">' +
   '<a class="facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=' + shareURL + '"><i class="fa fa-facebook"></i></a>' +
   '<a class="twitter" target="_blank" href="https://twitter.com/intent/tweet?text=' + shareTweetdata + '&amp;url=' + shareURL + '"><i class="fa fa-twitter"></i></a>' +
