@@ -20,7 +20,15 @@ function socialtron_socialjs() {
 add_action( 'wp_enqueue_scripts', 'socialtron_styles' );
 add_action( 'wp_footer', 'socialtron_socialjs');
 
+  /* Pass Plugin Options To JS
+    $socialtronOptions = array(
+        'twitter'            => get_options()
+    );
+    wp_localize_script( 'socialtron_script', 'php_vars', $socialtronOptions );
+  */
+
  /*
+  * @TODO: Pass Plugin Options To JS
   * @TODO: Plugin Admin Page - Twitter
   * @TODO: Mobile & Desktop
   */
