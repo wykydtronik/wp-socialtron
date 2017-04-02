@@ -37,18 +37,20 @@ wp_enqueue_script( 'some_handle' );
 function socialtron_create_menu() {
 
   	//create new top-level menu
-  	add_menu_page('Socialtron', 'Socialtron', 'administrator', __FILE__, 'socialtron_settings_page' , plugins_url('/images/icon.png', __FILE__) );
+  	add_menu_page('Socialtron', 'Socialtron', 'manage_options', __FILE__, 'socialtron_settings_page' , plugins_url('/images/icon.png', __FILE__) );
 
   	//call register settings function
   	add_action( 'admin_init', 'register_socialtron_settings' );
-  }
+}
 
-  function register_socialtron_settings() {
+function register_socialtron_settings() {
 	//register our settings
 	register_setting( 'socialtron-plugin-settings-group', 'blog_twitter' );
 	// register_setting( 'socialtron-plugin-settings-group', 'some_other_option' );
 	// register_setting( 'socialtron-plugin-settings-group', 'option_etc' );
 }
+
+add_action('admin_menu', 'socialtron_create_menu');
 
 function socialtron_settings_page() {
 ?>
