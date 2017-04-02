@@ -12,7 +12,7 @@
 
 function socialtron_styles() {
     wp_enqueue_style( 'socialtron_style', plugins_url( '/css/socialstyle.css', __FILE__), false, '1.0.0', 'all');
-    wp_enqueue_style( 'fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '4.2.0' );
+    wp_enqueue_style( 'fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0' );
 }
 
 function socialtron_socialjs() {
