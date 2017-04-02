@@ -20,14 +20,19 @@ function socialtron_socialjs() {
 add_action( 'wp_enqueue_scripts', 'socialtron_styles' );
 add_action( 'wp_footer', 'socialtron_socialjs');
 
-  /* Pass Plugin Options To JS
-    $socialtronOptions = array(
-        'twitter'            => get_options()
-    );
-    wp_localize_script( 'socialtron_script', 'php_vars', $socialtronOptions );
-  */
+/* Pass Plugin Options To JS */
+// Register the script
+wp_register_script( 'some_handle', 'path/to/myscript.js' );
 
-add_action('admin_menu', 'socialtron_create_menu');
+// Localize the script with new data
+$translation_array = array(
+	'blogtwitter' => get_option('blog_twitter'),
+	'a_value' => '10'
+);
+wp_localize_script( 'some_handle', 'sharetron_object', $translation_array );
+
+// Enqueued script with localized data.
+wp_enqueue_script( 'some_handle' );
 
 function socialtron_create_menu() {
 

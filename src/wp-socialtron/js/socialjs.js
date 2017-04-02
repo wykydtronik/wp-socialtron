@@ -1,6 +1,6 @@
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
-  var twitterUser = '@eddihughes';
+  var twitterUser = '@' + sharetron_object.blogtwitter;
 
   // No need to change anything else :)
 
@@ -18,3 +18,5 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
   jQuery('body').prepend(dataList);
 }
+
+console.log('@' + sharetron_object.blogtwitter);
