@@ -27,10 +27,62 @@ add_action( 'wp_footer', 'socialtron_socialjs');
     wp_localize_script( 'socialtron_script', 'php_vars', $socialtronOptions );
   */
 
+add_action('admin_menu', 'socialtron_create_menu');
+
+function socialtron_create_menu() {
+
+  	//create new top-level menu
+  	add_menu_page('Socialtron', 'Socialtron', 'administrator', __FILE__, 'socialtron_settings_page' , plugins_url('/images/icon.png', __FILE__) );
+
+  	//call register settings function
+  	add_action( 'admin_init', 'register_socialtron_settings' );
+  }
+
+  function register_socialtron_settings() {
+	//register our settings
+	register_setting( 'socialtron-plugin-settings-group', 'blog_twitter' );
+	// register_setting( 'socialtron-plugin-settings-group', 'some_other_option' );
+	// register_setting( 'socialtron-plugin-settings-group', 'option_etc' );
+}
+
+function socialtron_settings_page() {
+?>
+<div class="wrap">
+<h1>WP Socialtron</h1>
+<p>Your social share buttons will float fixed at the bottom of your mobile browser.</p>
+
+<form method="post" action="options.php">
+    <?php settings_fields( 'socialtron-plugin-settings-group' ); ?>
+    <?php do_settings_sections( 'socialtron-plugin-settings-group' ); ?>
+    <table class="form-table">
+        <tr valign="top">
+        <th scope="row">Your Blog Twitter</th>
+        <td><input type="text" name="blog_twitter" value="<?php echo esc_attr( get_option('blog_twitter') ); ?>" /></td>
+        </tr>
+    </table>
+
+    <?php submit_button(); ?>
+
+</form>
+</div>
+<?php }
+
+ /*
+  <tr valign="top">
+  <th scope="row">Some Other Option</th>
+  <td><input type="text" name="some_other_option" value="<?php echo esc_attr( get_option('some_other_option') ); ?>" /></td>
+  </tr>
+
+  <tr valign="top">
+  <th scope="row">Options, Etc.</th>
+  <td><input type="text" name="option_etc" value="<?php echo esc_attr( get_option('option_etc') ); ?>" /></td>
+  </tr>
+ */
+
  /*
   * @TODO: Pass Plugin Options To JS
   * @TODO: Plugin Admin Page - Twitter
   * @TODO: Mobile & Desktop
-  */
+ */
 
 ?>
