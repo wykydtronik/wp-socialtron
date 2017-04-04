@@ -12,7 +12,7 @@
 
 function socialtron_styles() {
     wp_enqueue_style( 'socialtron_style', plugins_url( '/css/socialstyle.css', __FILE__), false, '1.0.0', 'all');
-    wp_enqueue_style( 'fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0' );
+    wp_enqueue_style( 'fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0' );;
 }
 
 function socialtron_socialjs() {
@@ -23,7 +23,7 @@ add_action( 'wp_enqueue_scripts', 'socialtron_styles' );
 add_action( 'wp_footer', 'socialtron_socialjs');
 
 // Pass Plugin Options To JS
-wp_register_script( 'share_handle', '/js/socialjs.js' );
+wp_register_script( 'share_handle', '' );
 
 // Localize the script with new data
 $translation_array = array(
